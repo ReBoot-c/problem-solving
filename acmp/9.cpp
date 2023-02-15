@@ -63,7 +63,7 @@ void solution_2() { // Решение с STL
 
 int main() {
     solution_1();
-    cout << string(100, "-") << endl;
+    cout << string(100, '-') << endl;
     solution_2();
     return 0;
 }

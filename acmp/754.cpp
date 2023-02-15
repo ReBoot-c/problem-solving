@@ -23,7 +23,7 @@ int main() {
 
     int countError = count_if(weights.begin(),
                               weights.end(), 
-                              [](int _i) {
+                              [&](int _i) {
                                     return _i < WEIGHT_MINIMAL || _i > WEIGHT_MAXIMAL; 
                               });
 
