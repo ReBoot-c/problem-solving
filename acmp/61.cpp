@@ -19,30 +19,48 @@ using namespace std;
 1
 */
 
-void basketball() { 
-	vector<pair<int, int>> teams;
+const int AMOUNT_ROUNDS = 4;
 
-	for (int i = 0; i < 4; i++) {
-		pair<int, int> current;
+void basketball() { // решение с векторами
+	vector<pair<int, int>> teams(AMOUNT_ROUNDS);
 
-		cin >> current.first >> current.second;
-		teams.push_back(current);
+	for (auto &team : teams) {
+		cin >> team.first >> team.second;
 	}
 
-	int summary_first = accumulate(teams.begin(), teams.end(), 0,
+	int summaryFirst = accumulate(teams.begin(), teams.end(), 0,
 		[](auto previos, auto& entry) {
 			return previos + entry.first;
 		});
 
-	int summary_second = accumulate(teams.begin(), teams.end(), 0,
+	int summarySecond = accumulate(teams.begin(), teams.end(), 0,
 		[](auto previos, auto& entry) {
 			return previos + entry.second;
 		});
 
-	if (summary_first == summary_second) {
+	if (summaryFirst == summarySecond) {
 		cout << "DRAW" << endl;
 	}
 	else {
-		cout << (summary_first > summary_second ? 1 : 2) << endl;
+		cout << (summaryFirst > summarySecond ? 1 : 2) << endl;
+	}
+}
+
+void basketball2() { // Более простое решение без использования векторов
+	int summaryFirst, summarySecond;
+
+	for (int i = 0; i < AMOUNT_ROUNDS; i++) {
+		int first, second;
+		cin >> first >> second;
+
+		summaryFirst += first;
+		summarySecond += second;
+	}
+
+	if (summaryFirst == summarySecond) {
+		cout << "DRAW" << endl;
+	}
+	else {
+		cout << (summaryFirst > summarySecond ? 1 : 2) << endl;
 	}
 }
