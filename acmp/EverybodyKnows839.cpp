@@ -1,7 +1,7 @@
 #include <iostream>
 
 /* https://acmp.ru/index.asp?main=task&id_task=839
-Вывести YES если в строке только 1, NO в противном случае
+Вывести YES если строка состоит только из 1, NO в противном случае
 */
 
 int solution_1(std::string digits) {
