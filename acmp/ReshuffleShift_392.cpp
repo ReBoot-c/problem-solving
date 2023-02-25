@@ -5,25 +5,19 @@
 
 int main() {
 	int size;
+	int minimalIndex = 0;
 	std::cin >> size;
 
 	std::vector<int> digits(size);
-	std::vector<int> digitsOffset(size);
 
-	for (auto &i : digits) {
-		std::cin >> i;
-	}
+    for (int i = 0; i < size; i++)
+    {
+        std::cin >> digits[i];
+        minimalIndex = digits[i] < digits[minimalIndex] ? i : minimalIndex;
+    }
 
-	// FIXME: НЕ РАБОТАЕТ!!!!!
 	for (int i = 0; i < size; i++) {
-		int indexOffset = abs(i - size);
-		indexOffset = indexOffset < size ? indexOffset : indexOffset - 1 ;
-
-		digitsOffset[indexOffset] = digits[i];
-		std::cout << indexOffset << " " << i << std::endl;
-	}
-
-	for (const auto i : digitsOffset) {
-		std::cout << i << " ";
+		int indexOffset = (minimalIndex + i) % size;
+		std::cout << digits[indexOffset] << ' ';
 	}
 }
