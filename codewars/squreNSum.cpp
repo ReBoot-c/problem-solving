@@ -25,6 +25,6 @@ int square_sum(const std::vector<int>& numbers)
     return std::inner_product(numbers.begin(), numbers.end(), numbers.begin(), 0 );
 
 
-    // 5 вариант (C++ 17):
+    // 6 вариант (C++ 17):
     return std::transform_reduce(numbers.begin(), numbers.end(), numbers.begin(), 0);
 }
