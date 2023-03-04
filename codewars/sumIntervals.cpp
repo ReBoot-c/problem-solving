@@ -3,12 +3,16 @@
 // TODO: Интервалы не дожны дублироваться
 #include <vector>
 #include <utility>
+#include <algorithm>
+#include <iostream>
 
 int sum_intervals(std::vector<std::pair<int, int>> intervals) {
-  int summary = 0;
-  for(const auto i : intervals) {
-    summary += i.second - i.first;
-  }
-  
-  return summary;
+  std::sort(intervals.begin(), intervals.end());
+  for (const auto i : intervals) std::cout << i.first << " " << i.second << ", ";
+  return 0;
+}
+// FIXME: НЕ РАБОТАЕТ!!!
+int main() {
+  sum_intervals(std::vector<std::pair<int,int>>({{100,1000}, {9, 20}}));
+  return 0;
 }
