@@ -20,9 +20,6 @@ int main() {
 
     std::cout << countMaxSequence << std::endl;
 
-    // Решение 2
-    // Пока не придумал...
-
     return 0;
 
 }
