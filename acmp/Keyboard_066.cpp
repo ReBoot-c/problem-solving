@@ -2,11 +2,7 @@
 #include <algorithm>
 
 using namespace std;
-/* Задача: https://acmp.ru/index.asp?main=task&id_task=66
-Для данной буквы английского алфавита нужно вывести справа стоящую букву на стандартной клавиатуре.
-При этом клавиатура замкнута, т.е. справа от буквы «p» стоит буква «a», от буквы «l» стоит буква «z»,
-а от буквы «m» — буква «q».
-*/
+// Задача: https://acmp.ru/index.asp?main=task&id_task=66
 int main() {
     const string KEYBOARD = "qwertyuiopasdfghjklzxcvbnm";
 
