@@ -28,7 +28,6 @@ std::string greekLeet(std::string str)
 	std::string leet = "";
 	std::transform(str.begin(), str.end(), str.begin(), ::tolower);
 	for (const auto i : str) {
-
 		leet += table.find(i) != table.end() ? table[i] : std::string(1, i);
 	}
 	
