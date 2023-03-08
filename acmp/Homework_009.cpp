@@ -71,10 +71,3 @@ void solution_2() { // Решение с STL
 
     cout << summaryPositive << " " << multiplyMinToMax << endl;
 }
-
-int main() {
-    solution_1();
-    cout << string(100, '-') << endl;
-    solution_2();
-    return 0;
-}
